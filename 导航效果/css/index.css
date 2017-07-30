@@ -1,0 +1,131 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    background-color: #222;
+    color:#fff;
+}
+#nav{
+    list-style: none;
+}
+#nav li{
+    margin:10px 20px;
+    list-style: none;
+    float:left;
+    width: 150px;
+    height: 50px;
+    /*line-height: 20px;*/
+    font-size: 12px;
+}
+.box{
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+.bottom{
+    position: absolute;
+    bottom: -2px;
+    left:-2px;
+    width:150px;
+    height: 7px;
+    background-color: #222;
+}
+.left{
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    width:7px;
+    height:50px;
+    background-color: #222;
+}
+.top{
+    position: absolute;
+    top: -2px;
+    right:-2px;
+    width:150px;
+    height: 7px;
+    background-color: #222;
+}
+.right{
+    position: absolute;
+    bottom: -2px;
+    right:-2px;
+    width:7px;
+    height:50px;
+    background-color: #222222;
+}
+.right_bottom{
+    position: absolute;
+    width:30px;
+    height:20px;
+    bottom:-10px;
+    right:-10px;
+    background-color: #222;
+
+}
+.circle{
+    z-index:2;
+    position: absolute;
+    bottom:-2px;
+    right: -7px;
+    width:10px;
+    height:10px;
+    border:1px solid #fff;
+    border-radius: 50%;
+}
+.circle>div{
+    position: absolute;
+    top:-1px;
+    left:-1px;
+    z-index:2;
+    width:12px;
+    height: 12px;
+    background-color: #222;
+}
+@keyframes bottom_top {
+    from{
+        width:150px;
+    }
+    to{
+        width:0px;
+    }
+}
+@keyframes left_right{
+    from{
+        height:50px;
+    }
+    to{
+        height:0px;
+    }
+}
+@keyframes end {
+    from{
+        width: 12px;
+    }
+    to{
+        width: 0px;
+    }
+}
+#nav>li:hover .bottom{
+    animation: bottom_top .15s linear 0s;
+    animation-fill-mode:forwards;
+}
+#nav>li:hover .left{
+    animation: left_right .2s linear .15s;
+    animation-fill-mode:forwards;
+}
+#nav>li:hover .top{
+    animation: bottom_top .15s linear .35s;
+    animation-fill-mode:forwards;
+}
+#nav>li:hover .right{
+    animation: left_right .2s linear .5s;
+    animation-fill-mode:forwards;
+}
+#nav>li:hover .circle>div {
+    animation: end 0.5s linear 0.7s;	/*动画属性 keyframes名字 运动时间 匀速运动 延迟时间*/
+    animation-fill-mode: forwards;  /*动画结束后停止在最后一帧*/
+}
