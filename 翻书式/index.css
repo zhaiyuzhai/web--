@@ -1,0 +1,50 @@
+body{
+    background-color: #222;
+}
+#box{
+    width:800px;
+    height:400px;
+    position:relative;
+    background: url(img/1.jpg) no-repeat ;
+    background-size:100% 100%;
+    margin:50px auto ;
+    perspective: 1200px;/*设置视觉距离*/
+}
+.page2{
+    width:50%;
+    height:100%;
+    position: absolute;
+    top:0px;
+    right:0px;
+    background: url("img/2.jpg") no-repeat right top;
+    background-size:200% 100%;
+    z-index: 1;
+}
+.page1{
+    width:50%;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    right:0px;
+    /*border:1px solid blue;*/
+    z-index: 2;
+    transform-style:preserve-3d;/*设置3d效果*/
+    transform-origin: left center;
+    /*transition:all 1s linear;*/
+}
+.page1 span{
+    width: 100%;
+    height:100%;
+    position:absolute;
+    /*transform-origin: left center;!*设置翻转点*!*/
+
+}
+.front{
+    background: url("./img/1.jpg") no-repeat right top;
+    background-size: 200% 100%;
+}
+.back{
+    background: url("./img/2.jpg") no-repeat left top;
+    background-size: 200% 100%;
+    transform: scale(-1,1) translateZ(-1PX);
+}
