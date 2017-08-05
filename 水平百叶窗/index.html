@@ -45,7 +45,8 @@
                 "transition":"all 1.5s linear"
             });
             now++;
-        })
+        });
+//        此处选择的是最后一个，否则会有10次触发的事件，ontransitionend事件完成后需要取消transition事件
         $("p:last-child").on("transitionend",function () {
             $(".box").css({
                 "background-image":"url(img/"+(now%4)+".jpg)"
