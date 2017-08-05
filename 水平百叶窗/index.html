@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+    <title>Title</title>
+    <script src="js/jquery-1.11.3.js"></script>
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+</style>
+<body>
+<script>
+    $(function () {
+        $(document.body).append("<div class='box'>");
+        $(".box").css({
+            'width':"700px",
+            'height':"400px",
+            "background-image":"url(img/0.jpg)",
+            "background-size":"100% 100%",
+            "margin":"0px auto",
+            "position":"relative"
+        });
+        for(var i=0;i<10;i++){
+            $('.box').append("<p>");
+            $("p:last-child").css({
+                width:"700px",
+                height:"0px",
+                position:"absolute",
+                top:40*(i)+"px"
+            });
+            $("p:last-child").css({
+                "background-image":"url(img/1.jpg)",
+                "background-size":"100% 400px",
+                "background-position":"0px -"+40*(i)+"px"
+            });
+        }
+        var now=0;
+        $(".box").on("click",function () {
+            $("p").css({
+                "height":"40px",
+                "transition":"all 1.5s linear"
+            });
+            now++;
+        })
+        $("p:last-child").on("transitionend",function () {
+            $(".box").css({
+                "background-image":"url(img/"+(now%4)+".jpg)"
+            });
+            $("p").css({
+                "background-image":"url(img/"+((now+1)%4)+".jpg)",
+                "transition":"none",
+                "height":"0px"
+            });
+        })
+    })
+</script>
+</body>
+</html>
